@@ -13,7 +13,7 @@ use App\Repository\CopypastaRepository;
 
 final class HomeController extends AbstractController
 {
-    #[Route('/copypasta', name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function index(CopypastaRepository $cpRepo): Response
     {
         $messages = $cpRepo->findTopThreeByCount();
@@ -23,7 +23,7 @@ final class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'app_copypasta', methods: ['POST'])]
+    #[Route('/copypasta', name: 'app_copypasta', methods: ['POST'])]
     public function copypasta(Request $request, EntityManagerInterface $entityManager): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
