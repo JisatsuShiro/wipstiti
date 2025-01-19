@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello Wipstiti! </h1>
+    <p>Retrouve les copy-pastas les plus populaires ici</p>
+    </br>
+    </br>
+    <div class="d-flex p-2 justify-content-evenly">
+        <div class="card" style="width: 18rem; height: fit-content; margin: 3rem 1rem">
+            <div class="card-body">
+                <h5 class="card-title">{{ messages[1].author }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{messages[1].date|date('d/m/Y')}}</h6>
+                <p class="card-text">{{messages[1].message}}</p>
+                <p class="card-link">{{messages[1].count}}</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;height: fit-content; margin: 0rem 1rem"">
+            <div class="card-body">
+                <h5 class="card-title">{{ messages[0].author }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{messages[0].date|date('d/m/Y')}}</h6>
+                <p class="card-text">{{messages[0].message}}</p>
+                <p class="card-link">{{messages[0].count}}</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem; margin: 6rem 1rem"; height: fit-content;">
+            <div class="card-body">
+                <h5 class="card-title">{{ messages[2].author }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{messages[2].date|date('d/m/Y')}}</h6>
+                <p class="card-text">{{messages[2].message}}</p>
+                <p class="card-link">{{messages[2].count}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
